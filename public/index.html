@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>FindIt Campus</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<b class="logo">Find<i>It</i> <small>campus</small></b>
+		<nav>
+			<button id="bReport" class="btn amber">+ Report item</button>
+			<button id="bInbox" class="btn">Inbox <span id="badge"></span></button>
+			<button id="bMine" class="btn">My posts</button>
+			<button id="bAbout" class="btn">About</button>
+			<button id="bAuth" class="btn">Log in</button>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<div>
+			<p class="eyebrow">ASTANA IT UNIVERSITY · LOST &amp; FOUND</p>
+			<h1>Lost it?<br>Found it?<br><em>Close the loop.</em></h1>
+			<p>One shared place to report an item, search the feed and talk to the person who posted it.</p>
+			<div class="stats">
+				<span><b id="sLost">0</b>lost</span>
+				<span><b id="sFound">0</b>found</span>
+				<span><b id="sRe">0</b>reunited</span>
+			</div>
+		</div>
+		<div class="radar">
+			<span style="--x:30%;--y:35%"></span>
+			<span style="--x:68%;--y:28%;--d:1s"></span>
+			<span style="--x:55%;--y:70%;--d:2s"></span>
+			<span style="--x:22%;--y:66%;--d:1.5s"></span>
+		</div>
+	</section>
+
+	<main>
+		<div class="filters">
+			<input id="q" type="search" placeholder="Search keys, backpack, library...">
+			<div class="seg" id="types">
+				<button data-v="" class="on">All</button>
+				<button data-v="lost">Lost</button>
+				<button data-v="found">Found</button>
+			</div>
+			<label class="chk"><input type="checkbox" id="done"> show reunited</label>
+		</div>
+		<div class="chips" id="chips"></div>
+		<div id="grid" class="grid"></div>
+	</main>
+
+	<dialog id="dlg">
+		<button class="x" onclick="dlg.close()">✕</button>
+		<div id="dbody"></div>
+	</dialog>
+	<div id="toast"></div>
+	<script src="app.js"></script>
+</body>
+</html>
